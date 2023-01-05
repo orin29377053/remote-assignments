@@ -1,0 +1,13 @@
+h1{
+    background-color: aquamarine;
+}
+.nav_all{
+    display: flex;
+
+}
+.nav{
+    display: flex;
+}
+ul{
+    list-style-type: none;
+}
