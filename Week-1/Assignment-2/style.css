@@ -1,13 +1,63 @@
 h1{
     background-color: aquamarine;
+    text-align: center; 
+
 }
 .nav_all{
     display: flex;
+    justify-content: space-between;
+    text-align: center;
+    
 
 }
 .nav{
-    display: flex;
+    display: flex;    
+    align-items:stretch;
+    padding-left: 0px;
+    margin: 0px;
+
 }
 ul{
     list-style-type: none;
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+    padding-left: 0px;
+    
+}
+.nav li{
+    background-color: aquamarine;
+    width: 5vh;
+    margin: 0.5rem;
+
+    border-style:dashed;
+    height: 5rem;
+    
+}
+#logo{
+    background-color: aquamarine;
+    text-align: center;
+    width: 1vh;
+}
+h2{
+    text-align: center; 
+}
+.button{
+    display: flex;
+    background-color: bisque;
+    text-align: center;
+    justify-content: center; 
+    width: 15%;
+    padding: 10px;
+    min-width: 120px;
+}
+.button_container{
+    display: flex;
+    justify-content: space-around;
+}
+@media screen and (max-width:650px){
+    .button{
+        width:120px;
+        
+    
 }
