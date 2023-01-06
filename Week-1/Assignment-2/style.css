@@ -57,7 +57,5 @@ h2{
 }
 @media screen and (max-width:650px){
     .button{
-        width:120px;
-        
-    
+        width:120px;}
 }
