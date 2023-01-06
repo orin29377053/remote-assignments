@@ -1,13 +1,20 @@
 function countAandB(input) {
-    let count=0;
+    let count_A=0;
+    let count_B=0;
     for (let i = 0;i<input.length;i++){
         if (input[i]=='a'){
-            count+=1;
+            count_A+=1;
         }else if(input[i]=='b'){
-            count+=1;
+            count_B+=1;
         }else{}
     }
-    return count
+    let count=count_A+count_B
+    if (count==0){
+        return `${count} (there is no A & B in list)`
+    }else{
+        return `${count} (${count_A}'a' letter${count>1?"s":""} and ${count_B}'b' letter${count>1?"s":""})`
+    }
+    
 }
 
 function toNumber(input) {
