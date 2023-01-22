@@ -32,16 +32,13 @@ app.get("/trackName", (req, res) => {
     const name = req.query;
     const inputName = name.name;
     if (inputName) {
-        res.send("/myName");
-    } else {
-        res.render("myname");
+        res.cookie("name" , inputName)
+        res.redirect("/myName");
     }
 });
+
+
 app.get("/myName", (req, res) => {
-    if (req.cookies.name) {
-        let name = req.cookies.name;
-        res.send(`<h1>Hello! ${name}</h1>`);
-    } else {
-        res.redirect("/trackName");
-    }
+    let name=req.cookies.name
+    res.render("myname",{name:name})
 });
