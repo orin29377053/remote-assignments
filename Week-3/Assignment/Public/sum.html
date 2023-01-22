@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply caculator</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h1>Cumsum tool</h1>
+    <div id="main-container">
+        <div id="input-container">
+            <h3>Submit the number you want to cumsum below</h3>
+            <div id="hint"><i>Hint: Input N will return 1+2+...+N, N has to be postive integer</i></div>
+            <input id="input">
+            <button id="button">Submit</button>
+        </div>
+        <div id="answer-container">
+            <h3 id="theAnswerIs">The answer is</h3>
+            <div id="myAnswer"></div>
+        </div>
+    </div>
+    <script>
+        let input=document.getElementById('input')
+        let btn=document.getElementById('button')
+        btn.addEventListener('click',function(){
+            let queryNumber=input.value
+            let url=`/data?number=${queryNumber}`
+            let xhr = new XMLHttpRequest()
+            xhr.open('GET',url)
+            xhr.send()
+            xhr.onreadystatechange=function(){
+                if (xhr.readyState ===4){
+                    document.getElementById('myAnswer').textContent=xhr.response
+            }}
+        })
+    </script>
+</body>
+</html>

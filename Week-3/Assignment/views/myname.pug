@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        title Landing Page
+    body
+        h1 Type Your Name Below
+        input#input 
+        button#button submit
+        script.
+            let input=document.getElementById('input')
+            let btn=document.getElementById('button')
+            btn.addEventListener('click',function(){
+                let queryName=input.value
+                document.cookie = `name=${queryName}`
+                let url=`/trackName?name=${queryName}`
+                let xhr = new XMLHttpRequest()
+                xhr.open('GET',url)
+                xhr.send()
+                xhr.onreadystatechange=function(){
+                    if (xhr.readyState ===4){
+                        window.location = xhr.response;
+                }}
+            })

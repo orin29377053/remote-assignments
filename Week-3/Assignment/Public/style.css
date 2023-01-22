@@ -1,0 +1,49 @@
+#main-container{
+    display: flex;    
+    align-items: stretch;
+    justify-content: space-around; 
+    flex-direction: column;
+    /* background-color: rgb(201, 228, 210); */
+    height: 180px;
+    margin: 10px;
+    /* color: rgb(2, 2, 2); */
+    font-size: 20px;
+}
+
+#input-container{
+    /* display: flex;     */
+    background-color: rgb(201, 228, 210);
+    padding: 10px;
+}
+h3{
+    margin: 1px;
+}
+h1{
+    margin-left: 12px;
+}
+
+#hint{
+    font-size: 2px;
+    padding: 2px;
+    
+}
+
+#answer-container{
+    background-color: rgb(4, 86, 32);
+    padding: 10px;
+    
+}
+
+#myAnswer{
+    height: 50px;
+    background-color: rgb(252, 254, 253);
+    display: flex;   
+    align-items: center; 
+    padding-left: 10px;
+}
+
+#theAnswerIs{
+    color: rgb(246, 243, 243);
+    
+    
+}
