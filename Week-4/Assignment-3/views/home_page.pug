@@ -1,0 +1,80 @@
+doctype html
+html(lang="en")
+    head
+        title Home page
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        style.
+            h1 {
+                font-size: 2rem;
+                margin:10px;
+                }
+            .container{
+                width:300px;
+                align-content: space-between;
+                margin:5px;
+            }
+            form{
+                display:flex;
+                flex-direction: column;
+                margin:5px;
+                width:80%;
+                border-radius: 5px;
+            }
+            #login{
+                background-color: rgb(201, 228, 210);
+            }
+            #signup{
+                background-color: rgb(232, 172, 131);
+            }
+            .input{
+                display:flex;
+                justify-content: space-between;
+                margin:8px;
+            }
+            button{
+                display:flex;
+                width:75px;
+                justify-content: space-evenly;
+                border-radius: 10px;
+                margin:5px
+            }
+            .describe{
+                font-size:20px;
+                font-weight:bold;
+                text-align: center;
+            }
+            .error{
+                font-size:10px;
+                margin-left:10px;
+                font-style: italic;
+                font-weight:bold;
+                color:red
+
+
+            }
+    body 
+        h1 Hello!
+        div.container
+            form(id="login" action="/signin" method="post")
+                    div.describe I want to sign in~
+                    div.input e-mail: 
+                        input(id="login_email" type='text' name='email' value="")
+                    div.input Password: 
+                        input(id="login_pwd" type='password' name='password' value="")
+                    div#signin_status.error
+
+                    button(id="login_button" type='submit') Sign-in!
+                    
+            form(id="signup" action="/signup" method="post")
+                    div.describe I want to sign up~
+                    div.input e-mail: 
+                        input(id="signup_email" type='text' name='email' value="")
+                    div.input Password: 
+                        input(id="signup_pwd" type='password' name='password' value="")
+                    div#signup_status.error
+                    button(id="signup_button" type='submit') Sign-up!
+                    
+        script(type='text/javascript', src='formatChecker.js')
