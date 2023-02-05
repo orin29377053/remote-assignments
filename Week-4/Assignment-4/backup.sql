@@ -26,10 +26,11 @@ CREATE TABLE `article` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(500) NOT NULL,
   `content` varchar(5000) DEFAULT NULL,
-  `author_id` int NOT NULL,
-  PRIMARY KEY (`id`,`title`),
-  KEY `author_id` (`author_id`),
-  CONSTRAINT `article_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`)
+  `email_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `email_id` (`email_id`),
+  KEY `article_title_IDX` (`title`) USING BTREE,
+  CONSTRAINT `article_ibfk_1` FOREIGN KEY (`email_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -71,6 +72,31 @@ INSERT INTO `author` VALUES (1,'orin',1),(2,'wenny',2);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sessions`
+--
+
+DROP TABLE IF EXISTS `sessions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `sessions` (
+  `session_id` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `expires` int unsigned NOT NULL,
+  `data` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sessions`
+--
+
+LOCK TABLES `sessions` WRITE;
+/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+INSERT INTO `sessions` VALUES ('Uai9mOG7aJGzpCpKo9S5JdE06fe5iUA2',1675586878,'{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2023-02-05T08:47:12.193Z\",\"httpOnly\":true,\"path\":\"/\"},\"username\":\"orin@gmail.com\"}');
+/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user`
 --
 
@@ -82,7 +108,7 @@ CREATE TABLE `user` (
   `email` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +117,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'orin@gmail.com','1234'),(2,'wenny@gmail.com','hi'),(27,'cat@gmail.com','1234');
+INSERT INTO `user` VALUES (1,'orin@gmail.com','81dc9bdb52d04dc20036dbd8313ed055'),(2,'wenny@gmail.com','49f68a5c8493ec2c0bf489821c21fc3b'),(27,'cat@gmail.com','81dc9bdb52d04dc20036dbd8313ed055');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +130,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-01  0:46:31
+-- Dump completed on 2023-02-05 17:14:07

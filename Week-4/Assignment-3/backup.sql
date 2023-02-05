@@ -27,7 +27,7 @@ CREATE TABLE `user` (
   `email` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'orin@gmail.com','1234'),(2,'wenny@gmail.com','hi'),(3,'cat@gmail.com','1234');
+INSERT INTO `user` VALUES (1,'orin@gmail.com','81dc9bdb52d04dc20036dbd8313ed055'),(2,'wenny@gmail.com','49f68a5c8493ec2c0bf489821c21fc3b'),(27,'cat@gmail.com','81dc9bdb52d04dc20036dbd8313ed055');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-31 15:58:23
+-- Dump completed on 2023-02-05 17:14:07

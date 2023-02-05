@@ -6,6 +6,5 @@ inner join assignment.user as ur on (ar.email_id=ur.id);
 
 
 /*2. Write another SQL statement to select articles from 7th to 12th sorted by id.*/;
-SELECT id,title,content FROM assignment.article
-where id in (7,8,9,10,11,12)
-ORDER BY id ASC ;
+SELECT id,title,content from (SELECT *, ROW_NUMBER() OVER (ORDER BY id asc) as id_order from `assignment`.article )
+as temp where id_order >6 and id_order <13 ;
