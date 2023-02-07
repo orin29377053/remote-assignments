@@ -84,8 +84,4 @@ app.post("/signup", async (req, res) => {
         res.send("sucess");
     }
 });
-<<<<<<< HEAD
-console.log('oeeo')
-=======
 console.log('oeedeeeo')
->>>>>>> test
