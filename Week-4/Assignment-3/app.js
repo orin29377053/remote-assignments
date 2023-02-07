@@ -84,3 +84,4 @@ app.post("/signup", async (req, res) => {
         res.send("sucess");
     }
 });
+console.log('oo')
